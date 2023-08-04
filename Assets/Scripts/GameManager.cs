@@ -16,6 +16,15 @@ public class GameManager : MonoBehaviour
 
     public ResetableEntity[] ResetableEntities;
 
+    public ResetableEntity[] KeyEntities;
+
+
+    private int keysFound;
+    public int KeysFound => keysFound;
+
+    [SerializeField]
+    private int keysNeeded;
+
     public float ResetTimer = 1f;
 
     private float currentResetTimer = 0f;
@@ -119,5 +128,11 @@ public class GameManager : MonoBehaviour
         {
             entity.EntityReset();
         }
-    } 
+    }
+
+    public void AddKey() 
+    {
+        keysFound++;
+        //Check if we have all the keys yet
+    }
 }
