@@ -26,6 +26,10 @@ public class PlatformerPlayer : Player
     private SpriteRenderer sr;
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private BoxCollider2D boxCollider;
+
+    private float bottomBoundsOffset;
 
     private Vector3 lastFramePosition;
     private float perFrameFallingDistance = 0.15f; //Distance moved per frame in y to be considered falling
@@ -41,6 +45,7 @@ public class PlatformerPlayer : Player
 
     public bool IsJumping => isJumping;
 
+    public Transform debug;
     private bool IsClimbing
     {
         get { return isClimbing; }
@@ -67,7 +72,14 @@ public class PlatformerPlayer : Player
 
     public int currentJumpCount; //To keep track of the amount of jumps since last standing on the ground
 
-    protected new void Awake()
+    protected new void Start()
+    {
+        base.Start();
+
+        bottomBoundsOffset = boxCollider.bounds.extents.y;
+    }
+
+    protected void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         lastFramePosition = transform.position;
@@ -78,6 +90,8 @@ public class PlatformerPlayer : Player
         JumpGravityScript();
         CheckForLadder();
         isCrouching = Crouch && !IsClimbing;
+
+        //debug.position = new Vector2(transform.position.x, transform.position.y - bottomBoundsOffset);
 
         //Check if falling
         if (transform.position.y < lastFramePosition.y && Mathf.Abs(transform.position.y - lastFramePosition.y) > perFrameFallingDistance) isFalling = true;
@@ -90,11 +104,43 @@ public class PlatformerPlayer : Player
         UpdateAnimator();
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (isJumping == false) return;
+
+        Vector2 contactPoint = collision.GetContact(0).point;
+
+        if (contactPoint.y < transform.position.y - bottomBoundsOffset - 0.01f)
+        {
+            print("grounded");
+            debug.position = contactPoint;
+            currentJumpCount = 0;
+            isJumping = false;
+            isFalling = false;
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Vector2 contactPoint = collision.GetContact(0).point;
-        if (contactPoint.y < transform.position.y) 
+
+        if (contactPoint.y < transform.position.y - bottomBoundsOffset)
         {
+            print("grounded");
+            debug.position = contactPoint;
+            currentJumpCount = 0;
+            isJumping = false;
+            isFalling = false;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        Vector2 contactPoint = collision.GetContact(0).point;
+
+        if (contactPoint.y < transform.position.y - bottomBoundsOffset)
+        {
+            print("grounded");
+            debug.position = contactPoint;
             currentJumpCount = 0;
             isJumping = false;
             isFalling = false;

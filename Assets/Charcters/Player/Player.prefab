@@ -232,5 +232,6 @@ MonoBehaviour:
   raycastDistance: 0
   sr: {fileID: 1020373746}
   animator: {fileID: 1020373745}
+  boxCollider: {fileID: 234523474}
   isJumping: 0
   currentJumpCount: 0
