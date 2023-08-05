@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
     public void StopTrack(string eventName) 
     {
         if (activeTracks.TryGetValue(eventName, out uint value) == false) return;
-        AkSoundEngine.StopPlayingID(value);
+        AkSoundEngine.StopPlayingID(value, 300, AkCurveInterpolation.AkCurveInterpolation_Linear);
 
         activeTracks.Remove(eventName);
     }

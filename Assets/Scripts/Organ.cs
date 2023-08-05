@@ -40,7 +40,7 @@ public class Organ : ResetableEntity
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.WasWithPlayer()) 
+        if (collision.WasWithPlayer())
         {
             PlayerInRange = true;
             interactionText.enabled = true;
@@ -58,25 +58,32 @@ public class Organ : ResetableEntity
 
     private void Update()
     {
-        if (pianoOpen) 
+        if (pianoOpen)
         {
-            if (Input.GetButtonDown("Interact")) 
+            if (Input.GetButtonDown("Interact"))
             {
                 GameManager.current.ContinueToNextLevel();
             }
         }
-        else if (PlayerInRange && GameManager.current.CurrentPlayer.IsAlive) 
+        else if (PlayerInRange && GameManager.current.CurrentPlayer.IsAlive)
         {
-            if (Input.GetButtonDown("Interact")) 
+            if (Input.GetButtonDown("Interact"))
             {
-                if (GameManager.current.KeysPlaced == GameManager.current.KeysNeeded) 
+                if (GameManager.current.KeysPlaced == GameManager.current.KeysNeeded)
                 {
                     GameManager.current.CompleteLevel(transform.position);
                 }
-                else if (GameManager.current.PlaceHeldKeys())
+                else
                 {
-                    interactionText.text = PlayOrganPrompt;
 
+                    animator.Play(GameManager.current.KeysFound == 0 ? "InteractBad" : "InteractGood");
+
+
+                    if (GameManager.current.PlaceHeldKeys())
+                    {
+                        interactionText.text = PlayOrganPrompt;
+
+                    }
                 }
             }
         }
@@ -84,12 +91,12 @@ public class Organ : ResetableEntity
 
     }
 
-    public void SetPianoDoorOpen(bool open) 
+    public void SetPianoDoorOpen(bool open)
     {
-        animator.Play(open ? "Open" : "Idle");
+        animator.Play(open ? "Open" : "Idle", 0);
     }
 
-    protected void OnPianoOpened() 
+    protected void OnPianoOpened()
     {
         pianoOpen = true;
         interactionText.text = ContinueToNextLevelPrompt;

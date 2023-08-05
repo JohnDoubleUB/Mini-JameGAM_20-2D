@@ -52,7 +52,11 @@ public abstract class Player : MonoBehaviour
 
     protected void FixedUpdate()
     {
-        if (CanControl == false || IsAlive == false) return;
+        if (CanControl == false || IsAlive == false) 
+        {
+            Move(Vector2.zero);
+            return; 
+        }
         Vector2 movementInput = GetMovementInput();
         Move(movementInput);
     }

@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
         {
             if (resetInitiated == false)
             {
+                AudioManager.current.StopTrack("PlaySong");
                 currentResetTimer = ResetTimer;
                 resetInitiated = true;
                 TimeScaleManager.current.TransitionToTimeScale(0.7f);
@@ -110,6 +111,7 @@ public class GameManager : MonoBehaviour
                     currentGameTimer = GameTimer;
                     KeyEntities.ResetKeysExcludingIds(PlacedKeyIds);
                     PickedUpKeyIds.Clear();
+                    AudioManager.current.PlayTrack("PlaySong");
                 }
 
             }
