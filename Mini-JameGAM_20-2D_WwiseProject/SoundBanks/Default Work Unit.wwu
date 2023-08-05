@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{F87ACDE6-BDF6-4C0B-B6F2-1BFD209261E0}" SchemaVersion="103">
 	<SoundBanks>
-		<WorkUnit Name="Default Work Unit" ID="{F87ACDE6-BDF6-4C0B-B6F2-1BFD209261E0}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{F87ACDE6-BDF6-4C0B-B6F2-1BFD209261E0}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="SoundbankGJ2" ID="{2F28BE23-2A4D-4BDA-BF67-B2EECCC9B1E7}">
+					<ObjectInclusionList>
+						<ObjectRef Name="SpiderNoise" ID="{AC2D28FB-0334-401A-BEFE-C7480017BCE3}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="DoorOpen" ID="{EDAFAA8D-A856-40F1-ACD4-7164334842A5}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayAmbiance" ID="{270B12F7-3C81-4188-AD15-655A831A6E03}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Spikes" ID="{B06AE573-D808-41D5-86A7-CEF41CAC9F47}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Song" ID="{408ADAE8-FD5E-426E-AF27-253646F1AF6D}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="StopSong" ID="{43CAADD5-BCD9-42EC-A506-542481783EB8}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="EnemyHit" ID="{EBB87B08-94CB-43CB-981D-D23846A67B55}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPlayerHit" ID="{398C78DA-E290-44CA-817C-5CD1C50DB37D}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayEnemyHit" ID="{DCBA8A79-C750-45AA-B42F-64D1B08D2EAD}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Reverse" ID="{515A3520-F067-45D6-8CBF-9AB9866DA00F}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Ambiance" ID="{106D4081-55E2-4667-829F-899157D6E3F8}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlaySong" ID="{2B26C66C-37AE-46BD-ACB3-9F82277A1452}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayOrgan" ID="{710B7248-F0A4-4934-9EDF-2099DA4EACC0}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PickUp" ID="{BAF0451B-E9D3-4953-914C-E0AB0A8F24A0}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPlayOrgan" ID="{2F711905-394F-4A8F-8C40-0B2D5003A33B}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlaySpiderNoise" ID="{9ACA6A49-38CC-4ADC-8118-92511C66C1DD}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerHit" ID="{868235A0-C5FA-4AF9-911E-EDF8513BC1B7}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPlayerJump" ID="{78BEFC61-6A2F-4B67-ADB5-B4A7E9FDEC97}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayDoorOpen" ID="{158D9802-7DE6-4BF1-BF48-B11D0EA2B50F}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlaySpikes" ID="{CDA10D1B-6399-4C63-BB0D-729854FA54D6}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPickUp" ID="{886B69AA-C49C-4CBE-B1AD-32F0FD679C5E}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayReverse" ID="{D124CC84-A237-4D5B-BE63-72F34E6426AF}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerJump" ID="{0EBCEF6E-4F27-4E12-A257-84C5BB4C3168}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="StopAmbiance" ID="{E226735B-7F03-4F83-8667-0632BB8AE0E3}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundBanks>
 </WwiseDocument>
