@@ -1254,6 +1254,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeTrap2
       objectReference: {fileID: 0}
+    - target: {fileID: 2632962395296529388, guid: d4caa330f1fdd564ca420e75e78c6886, type: 3}
+      propertyPath: AlwaysKillPlayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2632962395296529391, guid: d4caa330f1fdd564ca420e75e78c6886, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -18366,6 +18370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeTrap2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2632962395296529388, guid: d4caa330f1fdd564ca420e75e78c6886, type: 3}
+      propertyPath: AlwaysKillPlayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2632962395296529391, guid: d4caa330f1fdd564ca420e75e78c6886, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -21858,6 +21866,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeTrap2 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2632962395296529388, guid: d4caa330f1fdd564ca420e75e78c6886, type: 3}
+      propertyPath: AlwaysKillPlayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2632962395296529391, guid: d4caa330f1fdd564ca420e75e78c6886, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -22006,6 +22018,10 @@ PrefabInstance:
     - target: {fileID: 2632962395296529384, guid: d4caa330f1fdd564ca420e75e78c6886, type: 3}
       propertyPath: m_Name
       value: SpikeTrap2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632962395296529388, guid: d4caa330f1fdd564ca420e75e78c6886, type: 3}
+      propertyPath: AlwaysKillPlayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2632962395296529391, guid: d4caa330f1fdd564ca420e75e78c6886, type: 3}
       propertyPath: m_RootOrder
@@ -22786,6 +22802,10 @@ PrefabInstance:
     - target: {fileID: 2632962395296529384, guid: d4caa330f1fdd564ca420e75e78c6886, type: 3}
       propertyPath: m_Name
       value: SpikeTrap2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632962395296529388, guid: d4caa330f1fdd564ca420e75e78c6886, type: 3}
+      propertyPath: AlwaysKillPlayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2632962395296529391, guid: d4caa330f1fdd564ca420e75e78c6886, type: 3}
       propertyPath: m_RootOrder
