@@ -24,6 +24,7 @@ namespace AK
         static const AkUniqueID PLAYSONG = 290606676U;
         static const AkUniqueID PLAYSPIDERNOISE = 469612390U;
         static const AkUniqueID PLAYSPIKES = 1230004350U;
+        static const AkUniqueID PLAYSTEP = 440472397U;
         static const AkUniqueID STOPAMBIANCE = 1860546813U;
         static const AkUniqueID STOPSONG = 3341952226U;
     } // namespace EVENTS
