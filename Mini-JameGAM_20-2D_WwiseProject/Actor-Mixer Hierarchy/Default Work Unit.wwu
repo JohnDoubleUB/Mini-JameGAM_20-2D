@@ -155,6 +155,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="Reverse" ID="{515A3520-F067-45D6-8CBF-9AB9866DA00F}" ShortID="166633465">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-13</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F3C84890-600F-473A-8076-0A179BFDDEF5}"/>

@@ -30820,7 +30820,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
+  m_Color: {r: 0.62352943, g: 0.62352943, b: 0.62352943, a: 1}
   m_Origin: {x: -41, y: -20, z: 0}
   m_Size: {x: 100, y: 33, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -33838,6 +33838,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 234523472}
     - target: {fileID: 1264731655310353928, guid: eebaf56e96b3b104a95b7b2250a4949b, type: 3}
+      propertyPath: NextSceneName
+      value: MyloScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264731655310353928, guid: eebaf56e96b3b104a95b7b2250a4949b, type: 3}
       propertyPath: CameraFollower
       value: 
       objectReference: {fileID: 519420035}
@@ -34074,6 +34078,10 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 234523470}
+    - target: {fileID: 3017749445679578274, guid: 3cd585f3a5d880448b7d4cbab95fd4aa, type: 3}
+      propertyPath: offset.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cd585f3a5d880448b7d4cbab95fd4aa, type: 3}
 --- !u!1001 &5512386731124513059

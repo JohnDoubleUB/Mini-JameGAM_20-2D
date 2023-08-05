@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="154029919" Language="SFX" Hash="1640718244">
+		<SoundBank Id="154029919" Language="SFX" Hash="4011938827">
 			<ObjectPath>\SoundBanks\Default Work Unit\SoundbankGJ2</ObjectPath>
 			<ShortName>SoundbankGJ2</ShortName>
 			<Path>SoundbankGJ2.bnk</Path>
@@ -104,11 +104,11 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3299119567" Name="PlayReverse" ObjectPath="\Events\Default Work Unit\PlayReverse" DurationType="OneShot" DurationMin="4." DurationMax="4.">
+				<Event Id="3299119567" Name="PlayReverse" ObjectPath="\Events\Default Work Unit\PlayReverse" DurationType="OneShot" DurationMin="1.049275" DurationMax="1.049275">
 					<IncludedMemoryFiles>
 						<File Id="676053806" Language="SFX">
 							<ShortName>Reverse.wav</ShortName>
-							<Path>SFX\Reverse_10C4C929.wem</Path>
+							<Path>SFX\Reverse_29058A2C.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -136,6 +136,22 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="440472397" Name="PlayStep" ObjectPath="\Events\Default Work Unit\PlayStep" DurationType="OneShot" DurationMin="2." DurationMax="2.">
+					<IncludedMemoryFiles>
+						<File Id="216323715" Language="SFX">
+							<ShortName>Step_3_Single.wav</ShortName>
+							<Path>SFX\Step_3_Single_10C4C929.wem</Path>
+						</File>
+						<File Id="710817543" Language="SFX">
+							<ShortName>Step_1_Single.wav</ShortName>
+							<Path>SFX\Step_1_Single_10C4C929.wem</Path>
+						</File>
+						<File Id="810261986" Language="SFX">
+							<ShortName>Step_2_Single.wav</ShortName>
+							<Path>SFX\Step_2_Single_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1860546813" Name="StopAmbiance" ObjectPath="\Events\Default Work Unit\StopAmbiance" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="3341952226" Name="StopSong" ObjectPath="\Events\Default Work Unit\StopSong" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 			</IncludedEvents>
@@ -151,6 +167,10 @@
 				<File Id="149790832" Language="SFX">
 					<ShortName>PlayerJump2.wav</ShortName>
 					<Path>SFX\PlayerJump2_10C4C929.wem</Path>
+				</File>
+				<File Id="216323715" Language="SFX">
+					<ShortName>Step_3_Single.wav</ShortName>
+					<Path>SFX\Step_3_Single_10C4C929.wem</Path>
 				</File>
 				<File Id="236276858" Language="SFX">
 					<ShortName>PlayerHit6.wav</ShortName>
@@ -206,11 +226,19 @@
 				</File>
 				<File Id="676053806" Language="SFX">
 					<ShortName>Reverse.wav</ShortName>
-					<Path>SFX\Reverse_10C4C929.wem</Path>
+					<Path>SFX\Reverse_29058A2C.wem</Path>
+				</File>
+				<File Id="710817543" Language="SFX">
+					<ShortName>Step_1_Single.wav</ShortName>
+					<Path>SFX\Step_1_Single_10C4C929.wem</Path>
 				</File>
 				<File Id="787462108" Language="SFX">
 					<ShortName>PlayerHit5.wav</ShortName>
 					<Path>SFX\PlayerHit5_10C4C929.wem</Path>
+				</File>
+				<File Id="810261986" Language="SFX">
+					<ShortName>Step_2_Single.wav</ShortName>
+					<Path>SFX\Step_2_Single_10C4C929.wem</Path>
 				</File>
 				<File Id="887893152" Language="SFX">
 					<ShortName>PlayerHit2.wav</ShortName>

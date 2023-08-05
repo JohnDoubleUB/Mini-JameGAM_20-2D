@@ -2,6 +2,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	205146972	PlayPlayOrgan			\Default Work Unit\PlayPlayOrgan	
 	290606676	PlaySong			\Default Work Unit\PlaySong	
 	361479603	PlayAmbiance			\Default Work Unit\PlayAmbiance	
+	440472397	PlayStep			\Default Work Unit\PlayStep	
 	469612390	PlaySpiderNoise			\Default Work Unit\PlaySpiderNoise	
 	662891871	PlayPlayerHit			\Default Work Unit\PlayPlayerHit	
 	1230004350	PlaySpikes			\Default Work Unit\PlaySpikes	
@@ -17,6 +18,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	128126369	PlayerJump3	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\PlayerJump3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerJump\PlayerJump3		352944
 	146355230	PlayOrgan	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\PlayOrgan_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayOrgan		1587744
 	149790832	PlayerJump2	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\PlayerJump2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerJump\PlayerJump2		352944
+	216323715	Step_3_Single	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\Step_3_Single_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Step\Step_3_Single		352944
 	236276858	PlayerHit6	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\PlayerHit6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHit\PlayerHit6		264744
 	238093917	EnemyHit	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\EnemyHit_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnemyHit		838044
 	275124600	PlayerJump4	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\PlayerJump4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerJump\PlayerJump4		264744
@@ -30,7 +32,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	564118332	DoorOpen	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\DoorOpen_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\DoorOpen		441144
 	620874057	Ambiance	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\Ambiance_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambiance		5821344
 	637491785	PlayerJump1	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\PlayerJump1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerJump\PlayerJump1		352944
-	676053806	Reverse	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\Reverse_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Reverse		705744
+	676053806	Reverse	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\Reverse_29058A2C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Reverse		185236
+	710817543	Step_1_Single	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\Step_1_Single_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Step\Step_1_Single		352944
 	787462108	PlayerHit5	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\PlayerHit5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHit\PlayerHit5		264744
+	810261986	Step_2_Single	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\Step_2_Single_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Step\Step_2_Single		352944
 	887893152	PlayerHit2	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Mac\SFX\PlayerHit2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHit\PlayerHit2		264744
 

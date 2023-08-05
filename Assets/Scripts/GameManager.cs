@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
             if (resetInitiated == false)
             {
                 AudioManager.current.StopTrack("PlaySong");
+                AudioManager.current.AK_PlayClipOnObject("PlayReverse", gameObject);
                 currentResetTimer = ResetTimer;
                 resetInitiated = true;
                 TimeScaleManager.current.TransitionToTimeScale(0.7f);
@@ -111,7 +112,7 @@ public class GameManager : MonoBehaviour
                     currentGameTimer = GameTimer;
                     KeyEntities.ResetKeysExcludingIds(PlacedKeyIds);
                     PickedUpKeyIds.Clear();
-                    AudioManager.current.PlayTrack("PlaySong");
+                    if(!LevelCompleted) AudioManager.current.PlayTrack("PlaySong");
                 }
 
             }
