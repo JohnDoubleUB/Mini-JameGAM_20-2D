@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class Organ : ResetableEntity
 {
+    public static Organ current;
+
+    [SerializeField]
+    private Animator animator;
+
     [SerializeField]
     private bool PlayerInRange;
 
@@ -13,6 +18,15 @@ public class Organ : ResetableEntity
 
     public string PlaceKeyPrompt;
     public string PlayOrganPrompt;
+    public string ContinueToNextLevelPrompt;
+
+    private bool pianoOpen;
+
+    private void Awake()
+    {
+        if (current != null) Debug.LogWarning("Oops! it looks like there might already be a " + GetType().Name + " in this scene!");
+        current = this;
+    }
 
     private void Start()
     {
@@ -44,7 +58,14 @@ public class Organ : ResetableEntity
 
     private void Update()
     {
-        if (PlayerInRange && GameManager.current.CurrentPlayer.IsAlive) 
+        if (pianoOpen) 
+        {
+            if (Input.GetButtonDown("Interact")) 
+            {
+                GameManager.current.ContinueToNextLevel();
+            }
+        }
+        else if (PlayerInRange && GameManager.current.CurrentPlayer.IsAlive) 
         {
             if (Input.GetButtonDown("Interact")) 
             {
@@ -61,5 +82,16 @@ public class Organ : ResetableEntity
         }
 
 
+    }
+
+    public void SetPianoDoorOpen(bool open) 
+    {
+        animator.Play(open ? "Open" : "Idle");
+    }
+
+    protected void OnPianoOpened() 
+    {
+        pianoOpen = true;
+        interactionText.text = ContinueToNextLevelPrompt;
     }
 }

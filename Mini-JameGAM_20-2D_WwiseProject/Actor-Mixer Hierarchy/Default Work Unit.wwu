@@ -35,6 +35,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="DoorOpen" ID="{EDAFAA8D-A856-40F1-ACD4-7164334842A5}" ShortID="336589081">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-16</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F3C84890-600F-473A-8076-0A179BFDDEF5}"/>
@@ -118,6 +125,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="PlayOrgan" ID="{710B7248-F0A4-4934-9EDF-2099DA4EACC0}" ShortID="433290264">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-16</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F3C84890-600F-473A-8076-0A179BFDDEF5}"/>
@@ -242,6 +256,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="Spikes" ID="{B06AE573-D808-41D5-86A7-CEF41CAC9F47}" ShortID="488083367">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-15</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F3C84890-600F-473A-8076-0A179BFDDEF5}"/>

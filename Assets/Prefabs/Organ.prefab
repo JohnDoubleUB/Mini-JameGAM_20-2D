@@ -474,10 +474,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b339add385a8e44a9f5672b3ce7cb40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 2145291880328416958}
   PlayerInRange: 0
   interactionText: {fileID: 8194707523313201152}
   PlaceKeyPrompt: Press E To Add key
   PlayOrganPrompt: Press E To Play Organ
+  ContinueToNextLevelPrompt: Press E To Continue
 --- !u!61 &2069207328540434457
 BoxCollider2D:
   m_ObjectHideFlags: 0

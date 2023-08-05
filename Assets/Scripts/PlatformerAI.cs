@@ -69,7 +69,7 @@ public class PlatformerAI : ResetableEntity
         headCollisionNotifier.OnNotifyCollisionExit += OnHeadCollideExit;
 
     }
-    protected new void Update()
+    protected void Update()
     {
         JumpGravityScript();
     }

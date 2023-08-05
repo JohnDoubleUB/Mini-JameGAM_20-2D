@@ -11,8 +11,11 @@
 				<Property Name="Event Action List\{43CAADD5-BCD9-42EC-A506-542481783EB8}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{78BEFC61-6A2F-4B67-ADB5-B4A7E9FDEC97}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{886B69AA-C49C-4CBE-B1AD-32F0FD679C5E}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{9ACA6A49-38CC-4ADC-8118-92511C66C1DD}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{CDA10D1B-6399-4C63-BB0D-729854FA54D6}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{D124CC84-A237-4D5B-BE63-72F34E6426AF}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{DCBA8A79-C750-45AA-B42F-64D1B08D2EAD}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{E226735B-7F03-4F83-8667-0632BB8AE0E3}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
 						<Value Platform="Windows"></Value>
@@ -34,6 +37,9 @@
 				<Property Name="MeterView\MeterMode1Viewpoint1" Type="int32" Value="2"/>
 				<Property Name="MeterView\MeterMode1Viewpoint2" Type="int32" Value="3"/>
 				<Property Name="MeterView\MeterMode1Viewpoint3" Type="int32" Value="0"/>
+				<Property Name="MonitoringManager\GameObjectFilter\GameObjectFilterVersion" Type="int32" Value="1"/>
+				<Property Name="MonitoringManager\GameObjectFilter\GameObjectFiltersEnable" Type="bool" Value="True"/>
+				<Property Name="MonitoringManager\GameObjectFilter\x64_GameObjectFilters" Type="string" Value=""/>
 				<Property Name="SoundBankHeaderFilePath" Type="string" Value="GeneratedSoundBanks\"/>
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>

@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager current;
+
+    public string NextSceneName;
 
     public Transform DropLimit; //This is the lower limit that if the player drops below they are automatically dead 
     
@@ -41,6 +44,8 @@ public class GameManager : MonoBehaviour
     private float currentGameTimer = 0f;
 
     public float CurrentGameTimer => currentGameTimer;
+
+    private uint? organPlaying;
 
     private void Awake()
     {
@@ -135,6 +140,7 @@ public class GameManager : MonoBehaviour
         {
             LevelCompleted = true;
             ResetableEntities.StopAllEntities();
+            AudioManager.current.StopTrack("PlaySong");
             return true;
         }
 
@@ -143,11 +149,44 @@ public class GameManager : MonoBehaviour
 
     public void CompleteLevel(Vector2 position) 
     {
+        if (organPlaying != null) return;
+
         CurrentPlayer.CanControl = false;
         CurrentPlayer.SetPosition(position);
         CurrentPlayer.PlayOrgan(true);
+        organPlaying = AudioManager.current.AK_PlayClipOnObjectWithEndEventCallback("PlayPlayOrgan", gameObject, AK_CallbackFunction);
+        
 
         print("Level Complete!");
 
+    }
+
+    private void AK_CallbackFunction(object in_cookie, AkCallbackType in_type, object in_info)
+    {
+        switch (in_type)
+        {
+            case AkCallbackType.AK_EndOfEvent:
+                if (in_cookie is GameObject && in_cookie != null)
+                {
+                    CurrentPlayer.PlayOrgan(false);
+                    Organ.current.SetPianoDoorOpen(true);
+                    AudioManager.current.AK_PlayClipOnObject("PlayDoorOpen", Organ.current.gameObject);
+                }
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    public void ContinueToNextLevel() 
+    {
+        if (string.IsNullOrEmpty(NextSceneName)) 
+        {
+            print("No scene name has been defined to change to next!");
+            return;
+        }
+
+        SceneManager.LoadScene(NextSceneName);
     }
 }

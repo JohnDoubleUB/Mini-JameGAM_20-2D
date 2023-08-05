@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
 
     public bool UseLevelManagerTracks = false;
     public string[] LoopingTracks;
+    private Dictionary<string, uint> activeTracks = new Dictionary<string, uint>();
 
     private float masterVolume;
     private float musicVolume;
@@ -36,6 +37,20 @@ public class AudioManager : MonoBehaviour
         gameHasFocus = focus; //This hopefully will stop all the sounds playing when someone tabs back into the game
     }
 
+    public void StopTrack(string eventName) 
+    {
+        if (activeTracks.TryGetValue(eventName, out uint value) == false) return;
+        AkSoundEngine.StopPlayingID(value);
+
+        activeTracks.Remove(eventName);
+    }
+
+    public void PlayTrack(string eventName) 
+    {
+        if (activeTracks.ContainsKey(eventName)) return;
+        activeTracks.Add(eventName, AkSoundEngine.PostEvent(eventName, gameObject));
+    }
+
     public void PlayTracks(IEnumerable<string> tracks)
     {
         if (IsEditorClone()) return;
@@ -49,7 +64,7 @@ public class AudioManager : MonoBehaviour
                 if (string.IsNullOrEmpty(track)) continue;
 
                 print("Playing " + track);
-                AkSoundEngine.PostEvent(track, gameObject); //Its better that this calls its own AKSoundEngine event rather than AK_PlayClipOnObject
+                activeTracks.Add(track, AkSoundEngine.PostEvent(track, gameObject)); //Its better that this calls its own AKSoundEngine event rather than AK_PlayClipOnObject
             }
         }
     }

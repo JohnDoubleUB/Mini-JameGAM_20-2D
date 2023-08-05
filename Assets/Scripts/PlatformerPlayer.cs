@@ -111,12 +111,17 @@ public class PlatformerPlayer : Player
         UpdateAnimator();
     }
 
-    private void OnGroundCollideEnter(Collision2D collision) 
+    private void OnGroundCollideEnter(Collision2D collision)
     {
         currentJumpCount = 0;
         isJumping = false;
         isFalling = false;
-        
+
+        if (isAlive == false) 
+        {
+            rb.velocity = Vector2.zero;
+        }
+
         if (collision.WasWithPlatform())
         {
             print("Ground enter");
@@ -174,10 +179,10 @@ public class PlatformerPlayer : Player
         //trigger jumping but only when the player can jump I.e. has not reached the max jumps
         if (currentJumpCount < maxJumpCount || countAsJump == false)
         {
-           
+
             rb.velocity = new Vector2(0, jumpVelocity * jumpVelocityMultiplier);
 
-            if (countAsJump) 
+            if (countAsJump)
             {
                 AudioManager.current.AK_PlayClipOnObject("PlayPlayerJump", gameObject);
                 currentJumpCount++;
@@ -231,10 +236,11 @@ public class PlatformerPlayer : Player
         collisionNotifier.OnNotifyCollisionExit -= OnGroundCollideExit;
     }
 
-    public void SetPosition(Vector2 position) 
+    public void SetPosition(Vector2 position)
     {
         rb.velocity = Vector2.zero;
         rb.position = position;
+        isMoving = false;
     }
 
     public void PlayOrgan(bool play)

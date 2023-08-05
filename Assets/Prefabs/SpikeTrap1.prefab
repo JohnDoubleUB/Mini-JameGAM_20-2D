@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AlwaysKillPlayer: 0
+  SoundToPlay: PlaySpikes
 --- !u!61 &5511623058002041154
 BoxCollider2D:
   m_ObjectHideFlags: 0
