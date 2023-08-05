@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="UserProjectSettings" SchemaVersion="103">
+	<UserProjectSettingsInfo>
+		<UserProjectSettings Name="" ID="{C121BEAD-165E-45B2-AFE4-CC0385CC445E}">
+			<PropertyList>
+				<Property Name="Event Action List\{158D9802-7DE6-4BF1-BF48-B11D0EA2B50F}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{270B12F7-3C81-4188-AD15-655A831A6E03}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{2B26C66C-37AE-46BD-ACB3-9F82277A1452}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{2F711905-394F-4A8F-8C40-0B2D5003A33B}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{398C78DA-E290-44CA-817C-5CD1C50DB37D}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{43CAADD5-BCD9-42EC-A506-542481783EB8}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{78BEFC61-6A2F-4B67-ADB5-B4A7E9FDEC97}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{886B69AA-C49C-4CBE-B1AD-32F0FD679C5E}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{CDA10D1B-6399-4C63-BB0D-729854FA54D6}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{DCBA8A79-C750-45AA-B42F-64D1B08D2EAD}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="ExternalSourcesInputPath" Type="string">
+					<ValueList>
+						<Value Platform="Windows"></Value>
+						<Value Platform="Mac"></Value>
+					</ValueList>
+				</Property>
+				<Property Name="ExternalSourcesOutputPath" Type="string">
+					<ValueList>
+						<Value Platform="Windows">GeneratedSoundBanks\Windows\</Value>
+						<Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
+					</ValueList>
+				</Property>
+				<Property Name="GenerateSoundBanks\x64_SelectedLanguages" Type="string" Value=""/>
+				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value=""/>
+				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value=""/>
+				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
+				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
+				<Property Name="MeterView\MeterMode1Viewpoint0" Type="int32" Value="1"/>
+				<Property Name="MeterView\MeterMode1Viewpoint1" Type="int32" Value="2"/>
+				<Property Name="MeterView\MeterMode1Viewpoint2" Type="int32" Value="3"/>
+				<Property Name="MeterView\MeterMode1Viewpoint3" Type="int32" Value="0"/>
+				<Property Name="SoundBankHeaderFilePath" Type="string" Value="GeneratedSoundBanks\"/>
+				<Property Name="SoundBankPaths" Type="string">
+					<ValueList>
+						<Value Platform="Windows">GeneratedSoundBanks\Windows\</Value>
+						<Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
+					</ValueList>
+				</Property>
+				<Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">
+					<ValueList>
+						<Value Platform="Windows">Copy Streamed Files</Value>
+						<Value Platform="Mac">Copy Streamed Files</Value>
+					</ValueList>
+				</Property>
+				<Property Name="SoundBankPostGenerateCustomCmdLines" Type="string">
+					<ValueList>
+						<Value Platform="Windows">"$(CopyStreamedFilesExePath)" -info "$(InfoFilePath)" -outputpath "$(SoundBankPath)" -banks "$(SoundBankListAsTextFile)" -languages "$(LanguageList)"</Value>
+						<Value Platform="Mac">"$(CopyStreamedFilesExePath)" -info "$(InfoFilePath)" -outputpath "$(SoundBankPath)" -banks "$(SoundBankListAsTextFile)" -languages "$(LanguageList)"</Value>
+					</ValueList>
+				</Property>
+				<Property Name="SoundBankPreGenerateCustomCmdDescription" Type="string">
+					<ValueList>
+						<Value Platform="Windows"></Value>
+						<Value Platform="Mac"></Value>
+					</ValueList>
+				</Property>
+				<Property Name="SoundBankPreGenerateCustomCmdLines" Type="string">
+					<ValueList>
+						<Value Platform="Windows"></Value>
+						<Value Platform="Mac"></Value>
+					</ValueList>
+				</Property>
+			</PropertyList>
+		</UserProjectSettings>
+	</UserProjectSettingsInfo>
+</WwiseDocument>

@@ -174,10 +174,12 @@ public class PlatformerPlayer : Player
         //trigger jumping but only when the player can jump I.e. has not reached the max jumps
         if (currentJumpCount < maxJumpCount || countAsJump == false)
         {
+           
             rb.velocity = new Vector2(0, jumpVelocity * jumpVelocityMultiplier);
 
             if (countAsJump) 
             {
+                AudioManager.current.AK_PlayClipOnObject("PlayPlayerJump", gameObject);
                 currentJumpCount++;
                 isJumping = true;
             }

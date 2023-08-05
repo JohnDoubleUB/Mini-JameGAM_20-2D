@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1264731655310353929}
   - component: {fileID: 1264731655310353928}
   - component: {fileID: 1264731655310353930}
+  - component: {fileID: 2292318194924992443}
+  - component: {fileID: 4174159261692764704}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -78,3 +80,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TransitionSpeed: 20
+--- !u!114 &2292318194924992443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264731655310353935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31896c1b9a1ad744ab0469209b7afbe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseLevelManagerTracks: 0
+  LoopingTracks:
+  - PlayAmbiance
+  - PlaySong
+--- !u!114 &4174159261692764704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264731655310353935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a34bfaaaa47fd64098ac42153fadd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 77c01fd20ab3621449e6c18525cdf943, type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 

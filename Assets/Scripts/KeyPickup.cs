@@ -21,6 +21,7 @@ public class KeyPickup : ResetableEntity
     {
         if (collision.WasWithPlayer())
         {
+            AudioManager.current.AK_PlayClipOnObject("PlayPickUp", gameObject);
             keyObject.SetActive(false);
             boxCollider.enabled = false;
             GameManager.current.AddKey(UniqueID);

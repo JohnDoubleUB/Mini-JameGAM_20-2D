@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlatformerAI : ResetableEntity
 {
+    public string SoundToPlay;
     //Note: This class will be slightly different for the different type of game controllers, it might be worth making a parent class or interface so that some of the class structure is consistent throughout.
     [Header("Movement")]
     public float movementSpeed = 1;
@@ -188,6 +189,8 @@ public class PlatformerAI : ResetableEntity
             isAlive = false;
 
             foreach (GameObject obj in OtherObjectsToDisable) obj.SetActive(false);
+
+            if (string.IsNullOrEmpty(SoundToPlay) == false) AudioManager.current.AK_PlayClipOnObject("PlayEnemyHit", gameObject);
         }
         else
         {
@@ -204,6 +207,7 @@ public class PlatformerAI : ResetableEntity
     public override void EntityReset()
     {
         rb.position = initialPosition;
+        rb.velocity = Vector2.zero;
         SetKilled(false);
     }
 }

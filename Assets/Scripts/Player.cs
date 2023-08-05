@@ -64,7 +64,9 @@ public abstract class Player : MonoBehaviour
 
     public virtual void Kill() 
     {
+        if(isAlive) AudioManager.current.AK_PlayClipOnObject("PlayPlayerHit", gameObject);
         isAlive = false;
+        
     }
 
     public void MakeAlive() 
