@@ -18,5 +18,15 @@ public static class ExtensionMethods
         return collision.gameObject.tag == "Player";
     }
 
+    public static bool WasWithPlatform(this Collision2D collision)
+    {
+        return collision.gameObject.tag == "Platform";
+    }
+
+    public static bool WasWithPlatform(this Collider2D collision)
+    {
+        return collision.gameObject.tag == "Platform";
+    }
+
 }
 

@@ -10,21 +10,24 @@ public class Platform : ResetableEntity
     {
         initialPosition = transform.position;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.WasWithPlayer()) 
-        {
-            collision.collider.transform.SetParent(transform);
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    print("collisioon " + collision.gameObject.name);
+    //    print("collision " + collision.gameObject.layer);
+    //    if (collision.WasWithPlayer()) 
+    //    {
+            
+    //        GameManager.current.CurrentPlayer.transform.SetParent(transform);
+    //    }
+    //}
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.WasWithPlayer())
-        {
-            collision.collider.transform.SetParent(null);
-        }
-    }
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.WasWithPlayer())
+    //    {
+    //        GameManager.current.CurrentPlayer.transform.SetParent(null);
+    //    }
+    //}
 
     public override void EntityReset()
     {

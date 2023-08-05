@@ -28,6 +28,10 @@ public class PlatformerPlayer : Player
     private Animator animator;
     [SerializeField]
     private BoxCollider2D boxCollider;
+    [SerializeField]
+    private CollisionNotifier collisionNotifier;
+
+    private Transform parentedPlatform;
 
     private float bottomBoundsOffset;
 
@@ -83,6 +87,9 @@ public class PlatformerPlayer : Player
     {
         rb = GetComponent<Rigidbody2D>();
         lastFramePosition = transform.position;
+        collisionNotifier.OnNotifyCollisionEnter += OnGroundCollideEnter;
+        collisionNotifier.OnNotifyCollisionExit += OnGroundCollideExit;
+
     }
     protected new void Update()
     {
@@ -104,46 +111,28 @@ public class PlatformerPlayer : Player
         UpdateAnimator();
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnGroundCollideEnter(Collision2D collision) 
     {
-        if (isJumping == false) return;
-
-        Vector2 contactPoint = collision.GetContact(0).point;
-
-        if (contactPoint.y < transform.position.y - bottomBoundsOffset - 0.01f)
+        currentJumpCount = 0;
+        isJumping = false;
+        isFalling = false;
+        
+        if (collision.WasWithPlatform())
         {
-            print("grounded");
-            debug.position = contactPoint;
-            currentJumpCount = 0;
-            isJumping = false;
-            isFalling = false;
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Vector2 contactPoint = collision.GetContact(0).point;
-
-        if (contactPoint.y < transform.position.y - bottomBoundsOffset)
-        {
-            print("grounded");
-            debug.position = contactPoint;
-            currentJumpCount = 0;
-            isJumping = false;
-            isFalling = false;
+            print("Ground enter");
+            parentedPlatform = collision.transform;
+            transform.SetParent(parentedPlatform);
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnGroundCollideExit(Collision2D collision)
     {
-        Vector2 contactPoint = collision.GetContact(0).point;
-
-        if (contactPoint.y < transform.position.y - bottomBoundsOffset)
+        isFalling = true;
+        if (collision.WasWithPlatform() && collision.transform == parentedPlatform)
         {
-            print("grounded");
-            debug.position = contactPoint;
-            currentJumpCount = 0;
-            isJumping = false;
-            isFalling = false;
+            print("Ground exit");
+            parentedPlatform = null;
+            transform.SetParent(parentedPlatform);
         }
     }
 
@@ -214,6 +203,7 @@ public class PlatformerPlayer : Player
 
         //rb.AddForce(targetVelocity, ForceMode2D.Force);
         //rb.AddRelativeForce(targetVelocity, ForceMode2D.Force);
+
         rb.velocity = IsClimbing ? targetVelocity : new Vector2(targetVelocity.x, rb.velocity.y);
     }
 
@@ -226,5 +216,11 @@ public class PlatformerPlayer : Player
     {
         base.ResetPlayer();
         rb.velocity = Vector2.zero;
+    }
+
+    private void OnDestroy()
+    {
+        collisionNotifier.OnNotifyCollisionEnter -= OnGroundCollideEnter;
+        collisionNotifier.OnNotifyCollisionExit -= OnGroundCollideExit;
     }
 }
