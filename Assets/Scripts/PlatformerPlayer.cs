@@ -30,6 +30,8 @@ public class PlatformerPlayer : Player
     private BoxCollider2D boxCollider;
     [SerializeField]
     private CollisionNotifier collisionNotifier;
+    [SerializeField]
+    private PlaySoundEventHandler playSoundEventHandler;
 
     private Transform parentedPlatform;
 
@@ -113,6 +115,8 @@ public class PlatformerPlayer : Player
 
     private void OnGroundCollideEnter(Collision2D collision)
     {
+        playSoundEventHandler.AllowSound = true;
+        AudioManager.current.AK_PlayClipOnObject("PlayStep", gameObject);
         currentJumpCount = 0;
         isJumping = false;
         isFalling = false;
@@ -132,6 +136,7 @@ public class PlatformerPlayer : Player
 
     private void OnGroundCollideExit(Collision2D collision)
     {
+        playSoundEventHandler.AllowSound = false;
         isFalling = true;
         if (collision.WasWithPlatform() && collision.transform == parentedPlatform)
         {

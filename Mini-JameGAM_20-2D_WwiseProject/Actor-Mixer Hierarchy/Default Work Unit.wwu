@@ -479,6 +479,13 @@
 					<ObjectLists/>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="PlayerJump" ID="{0EBCEF6E-4F27-4E12-A257-84C5BB4C3168}" ShortID="870426465">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-14</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F3C84890-600F-473A-8076-0A179BFDDEF5}"/>
@@ -584,6 +591,13 @@
 					<ObjectLists/>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="Step" ID="{0130A19C-44A0-4FF4-AAF9-3FD3AAE8D158}" ShortID="31568299">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-16</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F3C84890-600F-473A-8076-0A179BFDDEF5}"/>
