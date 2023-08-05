@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 471956908}
   - component: {fileID: 471956909}
   - component: {fileID: 471956910}
+  - component: {fileID: 471956911}
   m_Layer: 7
   m_Name: GroundCollider
   m_TagString: Player
@@ -44,7 +45,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.28900802}
   m_SpriteTilingProperty:
@@ -71,6 +72,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895ee9a513cc7b64db060ffc6fb05ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!251 &471956911
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471956907}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 180
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1020373743
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +296,7 @@ MonoBehaviour:
   JumpHold: 0
   CanControl: 1
   movementSpeed: 1
-  jumpVelocity: 1
+  jumpVelocity: 1.2
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   maxJumpCount: 1

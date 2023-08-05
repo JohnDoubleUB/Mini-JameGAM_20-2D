@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlatformerPlayer : Player
+public class PlatformerAI : ResetableEntity
 {
     //Note: This class will be slightly different for the different type of game controllers, it might be worth making a parent class or interface so that some of the class structure is consistent throughout.
     [Header("Movement")]
@@ -16,11 +16,6 @@ public class PlatformerPlayer : Player
     public float lowJumpMultiplier = 2f;
     public int maxJumpCount = 1;
 
-    [Header("Climbing")]
-    public LayerMask ladderLayerMask;
-    public Transform ladderRaycastTarget;
-    public float raycastDistance; //This is to check for ladders
-
     private Rigidbody2D rb;
     [SerializeField]
     private SpriteRenderer sr;
@@ -30,45 +25,28 @@ public class PlatformerPlayer : Player
     private BoxCollider2D boxCollider;
     [SerializeField]
     private CollisionNotifier collisionNotifier;
+    [SerializeField]
+    private CollisionNotifier headCollisionNotifier;
+    [SerializeField]
+    private GameObject[] OtherObjectsToDisable = new GameObject[0];
 
     private Transform parentedPlatform;
 
-    private float bottomBoundsOffset;
-
-    private Vector3 lastFramePosition;
-    private float perFrameFallingDistance = 0.15f; //Distance moved per frame in y to be considered falling
-
-    //State variables
-    private bool isClimbing;
     private bool isMoving;
     [SerializeField]
     private bool isJumping;
-    private bool isCrouching;
-    private bool isPlayingOrgan;
-    private bool isFalling;
+
+    private Vector3 initialPosition;
+
+    [HideInInspector]
+    public bool Crouch;
+    [HideInInspector]
+    public bool JumpHold;
+
+    protected bool isAlive = true;
+    public bool IsAlive => isAlive;
 
     public bool IsJumping => isJumping;
-
-    public Transform debug;
-    private bool IsClimbing
-    {
-        get { return isClimbing; }
-        set
-        {
-            isClimbing = value;
-
-            if (isClimbing)
-            {
-                currentJumpCount = 0;
-                rb.gravityScale = 0;
-            }
-            else
-            {
-                rb.gravityScale = 1;
-            }
-        }
-    }
-    private bool canClimb;
 
     //Multipliers just to make the initial values more reasonable
     private float movementSpeedMultiplier = 300f;
@@ -76,47 +54,35 @@ public class PlatformerPlayer : Player
 
     public int currentJumpCount; //To keep track of the amount of jumps since last standing on the ground
 
-    protected new void Start()
+    private void Start()
     {
-        base.Start();
-
-        bottomBoundsOffset = boxCollider.bounds.extents.y;
+        initialPosition = transform.position;
     }
 
     protected void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        lastFramePosition = transform.position;
         collisionNotifier.OnNotifyCollisionEnter += OnGroundCollideEnter;
         collisionNotifier.OnNotifyCollisionExit += OnGroundCollideExit;
+        headCollisionNotifier.OnNotifyCollisionEnter += OnHeadCollideEnter;
+        headCollisionNotifier.OnNotifyCollisionExit += OnHeadCollideExit;
 
     }
     protected new void Update()
     {
-        base.Update();
         JumpGravityScript();
-        CheckForLadder();
-        isCrouching = Crouch && !IsClimbing;
-
-        //debug.position = new Vector2(transform.position.x, transform.position.y - bottomBoundsOffset);
-
-        //Check if falling
-        if (transform.position.y < lastFramePosition.y && Mathf.Abs(transform.position.y - lastFramePosition.y) > perFrameFallingDistance) isFalling = true;
-        lastFramePosition = transform.position;
     }
 
-    private void FixedUpdate()
+    protected void FixedUpdate()
     {
-        base.FixedUpdate();
         UpdateAnimator();
     }
 
-    private void OnGroundCollideEnter(Collision2D collision) 
+    private void OnGroundCollideEnter(Collision2D collision)
     {
         currentJumpCount = 0;
         isJumping = false;
-        isFalling = false;
-        
+
         if (collision.WasWithPlatform())
         {
             print("Ground enter");
@@ -127,7 +93,6 @@ public class PlatformerPlayer : Player
 
     private void OnGroundCollideExit(Collision2D collision)
     {
-        isFalling = true;
         if (collision.WasWithPlatform() && collision.transform == parentedPlatform)
         {
             print("Ground exit");
@@ -136,24 +101,28 @@ public class PlatformerPlayer : Player
         }
     }
 
+    private void OnHeadCollideEnter(Collision2D collision)
+    {
+        if (collision.WasWithPlayer()) 
+        {
+            SetKilled(true);
+            GameManager.current.CurrentPlayer.Jump(false);
+        }
+    }
+
+    private void OnHeadCollideExit(Collision2D collision)
+    {
+
+    }
+
     private void UpdateAnimator()
     {
         if (animator != null)
         {
             animator.SetBool("IsMoving", isMoving);
-            animator.SetBool("IsClimbing", IsClimbing);
             animator.SetBool("IsJumping", isJumping);
-            animator.SetBool("IsCrouching", isCrouching);
             animator.SetBool("IsDead", !IsAlive);
-            animator.SetBool("IsPlayingOrgan", isPlayingOrgan);
         }
-    }
-
-    private void CheckForLadder()
-    {
-        //RaycastHit2D hitInfo = Physics2D.Raycast(ladderRaycastTarget.position, Vector2.up, raycastDistance, ladderLayerMask);
-        //canClimb = hitInfo.collider != null;
-        //if (!canClimb) IsClimbing = false;
     }
 
     private void JumpGravityScript()
@@ -169,74 +138,72 @@ public class PlatformerPlayer : Player
         }
     }
 
-    public override void Jump(bool countAsJump = true)
+    public void Jump()
     {
         //trigger jumping but only when the player can jump I.e. has not reached the max jumps
-        if (currentJumpCount < maxJumpCount || countAsJump == false)
+        if (currentJumpCount < maxJumpCount)
         {
             rb.velocity = new Vector2(0, jumpVelocity * jumpVelocityMultiplier);
-
-            if (countAsJump) 
-            {
-                currentJumpCount++;
-                isJumping = true;
-            }
+            currentJumpCount++;
+            isJumping = true;
         }
     }
 
-    public override void Interact()
-    {
-
-    }
-
-    public override void Move(Vector2 movement)
+    public void Move(Vector2 movement)
     {
         //if(movement.x != 0f) Debug.Log("move");
         //Do the movement thing
         Vector2 targetVelocity = movement * movementSpeed * movementSpeedMultiplier * Time.deltaTime;
 
         //Check whether targetVelocity includes y speed, if so then check if we can climb
-        if (canClimb && targetVelocity.y != 0f) IsClimbing = true;
-        isMoving = targetVelocity.x != 0f || (IsClimbing && targetVelocity.y != 0f);
+        isMoving = targetVelocity.x != 0f;
 
         //Set sprite direction
         if (movement.x != 0)
         {
             bool directionIsNegative = movement.x < 0f;
-            sr.flipX = directionIsNegative;
+            sr.flipX = !directionIsNegative;
         }
 
-        //rb.AddForce(targetVelocity, ForceMode2D.Force);
-        //rb.AddRelativeForce(targetVelocity, ForceMode2D.Force);
-
-        rb.velocity = IsClimbing ? targetVelocity : new Vector2(targetVelocity.x, rb.velocity.y);
-    }
-
-    public override void OnFootFall()
-    {
-
-    }
-
-    public override void ResetPlayer()
-    {
-        base.ResetPlayer();
-        rb.velocity = Vector2.zero;
+        rb.velocity = new Vector2(targetVelocity.x, rb.velocity.y);
     }
 
     private void OnDestroy()
     {
         collisionNotifier.OnNotifyCollisionEnter -= OnGroundCollideEnter;
         collisionNotifier.OnNotifyCollisionExit -= OnGroundCollideExit;
+        headCollisionNotifier.OnNotifyCollisionEnter -= OnHeadCollideEnter;
+        headCollisionNotifier.OnNotifyCollisionExit -= OnHeadCollideExit;
     }
 
-    public void SetPosition(Vector2 position) 
+    private void SetKilled(bool killed) 
     {
-        rb.velocity = Vector2.zero;
-        rb.position = position;
+        if (killed) 
+        {
+            //Killed animation
+            collisionNotifier.gameObject.SetActive(false);
+            headCollisionNotifier.gameObject.SetActive(false);
+            boxCollider.enabled = false;
+            rb.isKinematic = true;
+            isAlive = false;
+
+            foreach (GameObject obj in OtherObjectsToDisable) obj.SetActive(false);
+        }
+        else
+        {
+            //reset
+            collisionNotifier.gameObject.SetActive(true);
+            headCollisionNotifier.gameObject.SetActive(true);
+            boxCollider.enabled = true;
+            rb.isKinematic = false;
+            isAlive = true;
+            foreach (GameObject obj in OtherObjectsToDisable) obj.SetActive(true);
+        }
     }
 
-    public void PlayOrgan(bool play)
+    public override void EntityReset()
     {
-        isPlayingOrgan = play;
+        rb.position = initialPosition;
+        SetKilled(false);
     }
 }

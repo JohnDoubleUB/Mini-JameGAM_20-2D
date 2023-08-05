@@ -13,14 +13,20 @@ public class GameManager : MonoBehaviour
     public CameraFollow CameraFollower;
 
     public bool GameHasStarted = true;
+    public bool LevelCompleted = false;
 
     public ResetableEntity[] ResetableEntities;
 
-    public ResetableEntity[] KeyEntities;
+    public KeyPickup[] KeyEntities;
 
+    public List<string> PickedUpKeyIds = new List<string>();
 
-    private int keysFound;
-    public int KeysFound => keysFound;
+    public List<string> PlacedKeyIds = new List<string>();
+
+    public int KeysFound => PickedUpKeyIds.Count;
+    public int KeysPlaced => PlacedKeyIds.Count;
+
+    public int KeysNeeded => keysNeeded;
 
     [SerializeField]
     private int keysNeeded;
@@ -29,8 +35,6 @@ public class GameManager : MonoBehaviour
 
     private float currentResetTimer = 0f;
     private bool resetInitiated;
-
-    float timeScaleVelocity = 1f;
 
     public float GameTimer = 10f;
 
@@ -47,7 +51,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartAllEntities();
+        ResetableEntities.StartAllEntities();
         currentGameTimer = GameTimer;
     }
 
@@ -64,13 +68,16 @@ public class GameManager : MonoBehaviour
                 CameraFollower.FollowEnabled = false;
             }
 
-            if (currentGameTimer > 0)
+            if (!LevelCompleted)
             {
-                currentGameTimer -= Time.deltaTime;
-            }
-            else 
-            {
-                CurrentPlayer.Kill();
+                if (currentGameTimer > 0)
+                {
+                    currentGameTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    CurrentPlayer.Kill();
+                }
             }
         }
 
@@ -80,7 +87,7 @@ public class GameManager : MonoBehaviour
             {
                 currentResetTimer = ResetTimer;
                 resetInitiated = true;
-                TimeScaleManager.current.TransitionToTimeScale(0.5f);
+                TimeScaleManager.current.TransitionToTimeScale(0.7f);
             }
             else 
             {
@@ -92,10 +99,12 @@ public class GameManager : MonoBehaviour
                 {
                     resetInitiated = false;
                     CurrentPlayer.ResetPlayer();
-                    ResetAllEntities();
+                    ResetableEntities.ResetAllEntities();
                     CameraFollower.FollowEnabled = true;
                     TimeScaleManager.current.TransitionToTimeScale(1f);
                     currentGameTimer = GameTimer;
+                    KeyEntities.ResetKeysExcludingIds(PlacedKeyIds);
+                    PickedUpKeyIds.Clear();
                 }
 
             }
@@ -106,33 +115,39 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void StopAllEntities() 
+    public void AddKey(string uniqueId) 
     {
-        foreach (ResetableEntity entity in ResetableEntities) 
-        {
-            entity.EntityStop();
-        }
+        if (PickedUpKeyIds.Contains(uniqueId)) return;
+        PickedUpKeyIds.Add(uniqueId);
     }
 
-    private void StartAllEntities() 
+    public bool PlaceHeldKeys() 
     {
-        foreach (ResetableEntity entity in ResetableEntities)
+        foreach (string keyId in PickedUpKeyIds) 
         {
-            entity.EntityStart();
+            if (PlacedKeyIds.Contains(keyId)) continue;
+            PlacedKeyIds.Add(keyId);
         }
+
+        PickedUpKeyIds.Clear();
+
+        if (PlacedKeyIds.Count == keysNeeded) 
+        {
+            LevelCompleted = true;
+            ResetableEntities.StopAllEntities();
+            return true;
+        }
+
+        return false;
     }
 
-    private void ResetAllEntities() 
+    public void CompleteLevel(Vector2 position) 
     {
-        foreach (ResetableEntity entity in ResetableEntities)
-        {
-            entity.EntityReset();
-        }
-    }
+        CurrentPlayer.CanControl = false;
+        CurrentPlayer.SetPosition(position);
+        CurrentPlayer.PlayOrgan(true);
 
-    public void AddKey() 
-    {
-        keysFound++;
-        //Check if we have all the keys yet
+        print("Level Complete!");
+
     }
 }

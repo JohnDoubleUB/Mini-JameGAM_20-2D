@@ -5,7 +5,6 @@ using UnityEngine;
 public abstract class ResetableEntity : MonoBehaviour
 {
     private bool entityActive;
-
     public bool EntityActive => entityActive;
     public abstract void EntityReset();
     public void EntityStart() 

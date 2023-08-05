@@ -8,11 +8,13 @@ public class KeyPickup : ResetableEntity
     private BoxCollider2D boxCollider;
     [SerializeField]
     private GameObject keyObject;
+    
+    public string UniqueID;
 
     public override void EntityReset()
     {
         keyObject.SetActive(true);
-        boxCollider.enabled = false;
+        boxCollider.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +23,7 @@ public class KeyPickup : ResetableEntity
         {
             keyObject.SetActive(false);
             boxCollider.enabled = false;
-            GameManager.current.AddKey();
+            GameManager.current.AddKey(UniqueID);
         }
     }
 }

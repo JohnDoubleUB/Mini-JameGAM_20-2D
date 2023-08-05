@@ -8,22 +8,27 @@ public class UIKeyDisplayer : MonoBehaviour
 
     private List<GameObject> uiKeys = new List<GameObject>();
 
+    [Range(0, 2)]
+    public int KeyVariable = 0;
+
     private void Update()
     {
-        if (GameManager.current.KeysFound != uiKeys.Count) 
+        int keyCount = GetKeyCount();
+
+        if (keyCount != uiKeys.Count) 
         {
-            bool lessKeysPresent = uiKeys.Count < GameManager.current.KeysFound;
+            bool lessKeysPresent = uiKeys.Count < keyCount;
 
             if (lessKeysPresent)
             {
-                while (uiKeys.Count < GameManager.current.KeysFound) 
+                while (uiKeys.Count < keyCount) 
                 {
                     uiKeys.Add(Instantiate(keyUIPrefab, transform));
                 }
             }
             else 
             {
-                int keysToRemove = uiKeys.Count - GameManager.current.KeysFound;
+                int keysToRemove = uiKeys.Count - keyCount;
 
                 for (int i = 0; i < keysToRemove; i++) 
                 {
@@ -31,6 +36,19 @@ public class UIKeyDisplayer : MonoBehaviour
                     uiKeys.RemoveAt(0);
                 }
             }
+        }
+    }
+
+    private int GetKeyCount() 
+    {
+        switch (KeyVariable) 
+        {
+            case 0:
+                return GameManager.current.KeysFound;
+            case 1:
+                return GameManager.current.KeysPlaced;
+            default:
+                return GameManager.current.KeysNeeded;
         }
     }
 }

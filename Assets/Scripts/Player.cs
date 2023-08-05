@@ -18,7 +18,7 @@ public abstract class Player : MonoBehaviour
 
     public bool CanControl = true;
 
-    public virtual void Jump() { }
+    public virtual void Jump(bool countAsJump = true) { }
     public virtual void Interact() { }
     public virtual void Move(Vector2 movement) { }
     public virtual void OnFootFall() { }
@@ -30,7 +30,8 @@ public abstract class Player : MonoBehaviour
 
     protected void Update()
     {
-        if (CanControl == false)
+
+        if (CanControl == false || IsAlive == false)
         {
             JumpHold = false;
             return;
@@ -40,6 +41,7 @@ public abstract class Player : MonoBehaviour
         {
             JumpHold = true;
             Jump();
+
         }
         else
         {
@@ -50,7 +52,7 @@ public abstract class Player : MonoBehaviour
 
     protected void FixedUpdate()
     {
-        if (CanControl == false) return;
+        if (CanControl == false || IsAlive == false) return;
         Vector2 movementInput = GetMovementInput();
         Move(movementInput);
     }
