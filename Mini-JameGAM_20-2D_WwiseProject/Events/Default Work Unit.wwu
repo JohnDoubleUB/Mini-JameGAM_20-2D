@@ -152,6 +152,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="PlayStep" ID="{756A199C-5033-4842-BDB4-339F72AF90CA}">
+					<ChildrenList>
+						<Action Name="" ID="{EFCBD4A6-ED09-4B82-BEBB-848E15CAA658}" ShortID="695230716">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Step" ID="{0130A19C-44A0-4FF4-AAF9-3FD3AAE8D158}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -9,7 +9,7 @@
   <ObjectReferenceAutoCleanup>true</ObjectReferenceAutoCleanup>
   <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
   <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
-  <WwiseInstallationPathMac />
+  <WwiseInstallationPathMac>/Applications/Audiokinetic/Wwise 2021.1.10.7883/Wwise.app</WwiseInstallationPathMac>
   <WwiseInstallationPathWindows>C:\Users\johnw\Documents\Wwise 2021.1.10.7883</WwiseInstallationPathWindows>
   <WwiseProjectPath>../Mini-JameGAM_20-2D_WwiseProject/Mini-JameGAM_20-2D_WwiseProject.wproj</WwiseProjectPath>
   <UseWaapi>true</UseWaapi>

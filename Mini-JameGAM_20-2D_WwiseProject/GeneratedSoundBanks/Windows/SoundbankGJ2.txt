@@ -2,6 +2,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	205146972	PlayPlayOrgan			\Default Work Unit\PlayPlayOrgan	
 	290606676	PlaySong			\Default Work Unit\PlaySong	
 	361479603	PlayAmbiance			\Default Work Unit\PlayAmbiance	
+	440472397	PlayStep			\Default Work Unit\PlayStep	
 	469612390	PlaySpiderNoise			\Default Work Unit\PlaySpiderNoise	
 	662891871	PlayPlayerHit			\Default Work Unit\PlayPlayerHit	
 	1230004350	PlaySpikes			\Default Work Unit\PlaySpikes	
@@ -14,23 +15,26 @@ Event	ID	Name			Wwise Object Path	Notes
 	3639922799	PlayDoorOpen			\Default Work Unit\PlayDoorOpen	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	128126369	PlayerJump3	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerJump3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerJump\PlayerJump3		352944
-	146355230	PlayOrgan	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayOrgan_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayOrgan		1587744
-	149790832	PlayerJump2	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerJump2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerJump\PlayerJump2		352944
-	236276858	PlayerHit6	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerHit6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHit\PlayerHit6		264744
-	238093917	EnemyHit	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\EnemyHit_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnemyHit		838044
-	275124600	PlayerJump4	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerJump4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerJump\PlayerJump4		264744
-	296310873	PlayerHit4	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerHit4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHit\PlayerHit4		264744
-	380864708	SpiderNoise	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\SpiderNoise_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\SpiderNoise		705744
-	414817809	PlayerHit3	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerHit3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHit\PlayerHit3		264744
-	483614494	PickUp	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PickUp_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PickUp		838044
-	509468577	Spikes	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\Spikes_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Spikes		352944
-	533107509	PlayerHit1	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerHit1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHit\PlayerHit1		264744
-	542299782	Song	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\Song_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Song		5821264
-	564118332	DoorOpen	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\DoorOpen_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\DoorOpen		441144
-	620874057	Ambiance	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\Ambiance_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambiance		5821344
-	637491785	PlayerJump1	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerJump1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerJump\PlayerJump1		352944
-	676053806	Reverse	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\Reverse_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Reverse		705744
-	787462108	PlayerHit5	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerHit5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHit\PlayerHit5		264744
-	887893152	PlayerHit2	E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerHit2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHit\PlayerHit2		264744
+	128126369	PlayerJump3	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerJump3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerJump\PlayerJump3		352944
+	146355230	PlayOrgan	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayOrgan_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayOrgan		1587744
+	149790832	PlayerJump2	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerJump2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerJump\PlayerJump2		352944
+	216323715	Step_3_Single	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\Step_3_Single_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Step\Step_3_Single		352944
+	236276858	PlayerHit6	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerHit6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHit\PlayerHit6		264744
+	238093917	EnemyHit	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\EnemyHit_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnemyHit		838044
+	275124600	PlayerJump4	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerJump4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerJump\PlayerJump4		264744
+	296310873	PlayerHit4	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerHit4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHit\PlayerHit4		264744
+	380864708	SpiderNoise	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\SpiderNoise_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\SpiderNoise		705744
+	414817809	PlayerHit3	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerHit3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHit\PlayerHit3		264744
+	483614494	PickUp	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PickUp_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PickUp		838044
+	509468577	Spikes	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\Spikes_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Spikes		352944
+	533107509	PlayerHit1	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerHit1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHit\PlayerHit1		264744
+	542299782	Song	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\Song_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Song		5821264
+	564118332	DoorOpen	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\DoorOpen_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\DoorOpen		441144
+	620874057	Ambiance	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\Ambiance_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambiance		5821344
+	637491785	PlayerJump1	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerJump1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerJump\PlayerJump1		352944
+	676053806	Reverse	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\Reverse_29058A2C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Reverse		185236
+	710817543	Step_1_Single	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\Step_1_Single_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Step\Step_1_Single		352944
+	787462108	PlayerHit5	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerHit5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHit\PlayerHit5		264744
+	810261986	Step_2_Single	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\Step_2_Single_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Step\Step_2_Single		352944
+	887893152	PlayerHit2	Y:\Desktop\MultiplayerBirdGame-master\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\SFX\PlayerHit2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHit\PlayerHit2		264744
 

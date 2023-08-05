@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>/Users/myleshopper/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Desktop/MultiplayerBirdGame-master/Mini-JameGAM_20-2D/Mini-JameGAM_20-2D_WwiseProject/</ProjectRoot>
+		<SourceFilesRoot>/Users/myleshopper/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Desktop/MultiplayerBirdGame-master/Mini-JameGAM_20-2D/Mini-JameGAM_20-2D_WwiseProject/.cache/Windows/</SourceFilesRoot>
+		<SoundBanksRoot>/Users/myleshopper/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Desktop/MultiplayerBirdGame-master/Mini-JameGAM_20-2D/Mini-JameGAM_20-2D_WwiseProject/GeneratedSoundBanks/Windows/</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>E:\UnityProjects\Mini-JameGAM_20-2D\Mini-JameGAM_20-2D_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>/Users/myleshopper/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Desktop/MultiplayerBirdGame-master/Mini-JameGAM_20-2D/Mini-JameGAM_20-2D_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="154029919" Language="SFX" Hash="3144918144">
+		<SoundBank Id="154029919" Language="SFX" Hash="4193880092">
 			<ObjectPath>\SoundBanks\Default Work Unit\SoundbankGJ2</ObjectPath>
 			<ShortName>SoundbankGJ2</ShortName>
 			<Path>SoundbankGJ2.bnk</Path>
@@ -20,7 +20,7 @@
 					<IncludedMemoryFiles>
 						<File Id="620874057" Language="SFX">
 							<ShortName>Ambiance.wav</ShortName>
-							<Path>SFX\Ambiance_D79FB2B7.wem</Path>
+							<Path>SFX/Ambiance_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -28,7 +28,7 @@
 					<IncludedMemoryFiles>
 						<File Id="564118332" Language="SFX">
 							<ShortName>DoorOpen.wav</ShortName>
-							<Path>SFX\DoorOpen_10C4C929.wem</Path>
+							<Path>SFX/DoorOpen_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -36,7 +36,7 @@
 					<IncludedMemoryFiles>
 						<File Id="238093917" Language="SFX">
 							<ShortName>EnemyHit.wav</ShortName>
-							<Path>SFX\EnemyHit_10C4C929.wem</Path>
+							<Path>SFX/EnemyHit_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -44,7 +44,7 @@
 					<IncludedMemoryFiles>
 						<File Id="483614494" Language="SFX">
 							<ShortName>PickUp.wav</ShortName>
-							<Path>SFX\PickUp_10C4C929.wem</Path>
+							<Path>SFX/PickUp_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -52,27 +52,27 @@
 					<IncludedMemoryFiles>
 						<File Id="236276858" Language="SFX">
 							<ShortName>PlayerHit6.wav</ShortName>
-							<Path>SFX\PlayerHit6_10C4C929.wem</Path>
+							<Path>SFX/PlayerHit6_10C4C929.wem</Path>
 						</File>
 						<File Id="296310873" Language="SFX">
 							<ShortName>PlayerHit4.wav</ShortName>
-							<Path>SFX\PlayerHit4_10C4C929.wem</Path>
+							<Path>SFX/PlayerHit4_10C4C929.wem</Path>
 						</File>
 						<File Id="414817809" Language="SFX">
 							<ShortName>PlayerHit3.wav</ShortName>
-							<Path>SFX\PlayerHit3_10C4C929.wem</Path>
+							<Path>SFX/PlayerHit3_10C4C929.wem</Path>
 						</File>
 						<File Id="533107509" Language="SFX">
 							<ShortName>PlayerHit1.wav</ShortName>
-							<Path>SFX\PlayerHit1_10C4C929.wem</Path>
+							<Path>SFX/PlayerHit1_10C4C929.wem</Path>
 						</File>
 						<File Id="787462108" Language="SFX">
 							<ShortName>PlayerHit5.wav</ShortName>
-							<Path>SFX\PlayerHit5_10C4C929.wem</Path>
+							<Path>SFX/PlayerHit5_10C4C929.wem</Path>
 						</File>
 						<File Id="887893152" Language="SFX">
 							<ShortName>PlayerHit2.wav</ShortName>
-							<Path>SFX\PlayerHit2_10C4C929.wem</Path>
+							<Path>SFX/PlayerHit2_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -80,19 +80,19 @@
 					<IncludedMemoryFiles>
 						<File Id="128126369" Language="SFX">
 							<ShortName>PlayerJump3.wav</ShortName>
-							<Path>SFX\PlayerJump3_10C4C929.wem</Path>
+							<Path>SFX/PlayerJump3_10C4C929.wem</Path>
 						</File>
 						<File Id="149790832" Language="SFX">
 							<ShortName>PlayerJump2.wav</ShortName>
-							<Path>SFX\PlayerJump2_10C4C929.wem</Path>
+							<Path>SFX/PlayerJump2_10C4C929.wem</Path>
 						</File>
 						<File Id="275124600" Language="SFX">
 							<ShortName>PlayerJump4.wav</ShortName>
-							<Path>SFX\PlayerJump4_10C4C929.wem</Path>
+							<Path>SFX/PlayerJump4_10C4C929.wem</Path>
 						</File>
 						<File Id="637491785" Language="SFX">
 							<ShortName>PlayerJump1.wav</ShortName>
-							<Path>SFX\PlayerJump1_10C4C929.wem</Path>
+							<Path>SFX/PlayerJump1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -100,15 +100,15 @@
 					<IncludedMemoryFiles>
 						<File Id="146355230" Language="SFX">
 							<ShortName>PlayOrgan.wav</ShortName>
-							<Path>SFX\PlayOrgan_10C4C929.wem</Path>
+							<Path>SFX/PlayOrgan_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3299119567" Name="PlayReverse" ObjectPath="\Events\Default Work Unit\PlayReverse" DurationType="OneShot" DurationMin="4." DurationMax="4.">
+				<Event Id="3299119567" Name="PlayReverse" ObjectPath="\Events\Default Work Unit\PlayReverse" DurationType="OneShot" DurationMin="1.049275" DurationMax="1.049275">
 					<IncludedMemoryFiles>
 						<File Id="676053806" Language="SFX">
 							<ShortName>Reverse.wav</ShortName>
-							<Path>SFX\Reverse_10C4C929.wem</Path>
+							<Path>SFX/Reverse_29058A2C.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -116,7 +116,7 @@
 					<IncludedMemoryFiles>
 						<File Id="542299782" Language="SFX">
 							<ShortName>Song.wav</ShortName>
-							<Path>SFX\Song_D79FB2B7.wem</Path>
+							<Path>SFX/Song_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -124,7 +124,7 @@
 					<IncludedMemoryFiles>
 						<File Id="380864708" Language="SFX">
 							<ShortName>SpiderNoise.wav</ShortName>
-							<Path>SFX\SpiderNoise_D79FB2B7.wem</Path>
+							<Path>SFX/SpiderNoise_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -132,7 +132,23 @@
 					<IncludedMemoryFiles>
 						<File Id="509468577" Language="SFX">
 							<ShortName>Spikes.wav</ShortName>
-							<Path>SFX\Spikes_10C4C929.wem</Path>
+							<Path>SFX/Spikes_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="440472397" Name="PlayStep" ObjectPath="\Events\Default Work Unit\PlayStep" DurationType="OneShot" DurationMin="2." DurationMax="2.">
+					<IncludedMemoryFiles>
+						<File Id="216323715" Language="SFX">
+							<ShortName>Step_3_Single.wav</ShortName>
+							<Path>SFX/Step_3_Single_10C4C929.wem</Path>
+						</File>
+						<File Id="710817543" Language="SFX">
+							<ShortName>Step_1_Single.wav</ShortName>
+							<Path>SFX/Step_1_Single_10C4C929.wem</Path>
+						</File>
+						<File Id="810261986" Language="SFX">
+							<ShortName>Step_2_Single.wav</ShortName>
+							<Path>SFX/Step_2_Single_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -142,79 +158,91 @@
 			<IncludedMemoryFiles>
 				<File Id="128126369" Language="SFX">
 					<ShortName>PlayerJump3.wav</ShortName>
-					<Path>SFX\PlayerJump3_10C4C929.wem</Path>
+					<Path>SFX/PlayerJump3_10C4C929.wem</Path>
 				</File>
 				<File Id="146355230" Language="SFX">
 					<ShortName>PlayOrgan.wav</ShortName>
-					<Path>SFX\PlayOrgan_10C4C929.wem</Path>
+					<Path>SFX/PlayOrgan_10C4C929.wem</Path>
 				</File>
 				<File Id="149790832" Language="SFX">
 					<ShortName>PlayerJump2.wav</ShortName>
-					<Path>SFX\PlayerJump2_10C4C929.wem</Path>
+					<Path>SFX/PlayerJump2_10C4C929.wem</Path>
+				</File>
+				<File Id="216323715" Language="SFX">
+					<ShortName>Step_3_Single.wav</ShortName>
+					<Path>SFX/Step_3_Single_10C4C929.wem</Path>
 				</File>
 				<File Id="236276858" Language="SFX">
 					<ShortName>PlayerHit6.wav</ShortName>
-					<Path>SFX\PlayerHit6_10C4C929.wem</Path>
+					<Path>SFX/PlayerHit6_10C4C929.wem</Path>
 				</File>
 				<File Id="238093917" Language="SFX">
 					<ShortName>EnemyHit.wav</ShortName>
-					<Path>SFX\EnemyHit_10C4C929.wem</Path>
+					<Path>SFX/EnemyHit_10C4C929.wem</Path>
 				</File>
 				<File Id="275124600" Language="SFX">
 					<ShortName>PlayerJump4.wav</ShortName>
-					<Path>SFX\PlayerJump4_10C4C929.wem</Path>
+					<Path>SFX/PlayerJump4_10C4C929.wem</Path>
 				</File>
 				<File Id="296310873" Language="SFX">
 					<ShortName>PlayerHit4.wav</ShortName>
-					<Path>SFX\PlayerHit4_10C4C929.wem</Path>
+					<Path>SFX/PlayerHit4_10C4C929.wem</Path>
 				</File>
 				<File Id="380864708" Language="SFX">
 					<ShortName>SpiderNoise.wav</ShortName>
-					<Path>SFX\SpiderNoise_D79FB2B7.wem</Path>
+					<Path>SFX/SpiderNoise_D79FB2B7.wem</Path>
 				</File>
 				<File Id="414817809" Language="SFX">
 					<ShortName>PlayerHit3.wav</ShortName>
-					<Path>SFX\PlayerHit3_10C4C929.wem</Path>
+					<Path>SFX/PlayerHit3_10C4C929.wem</Path>
 				</File>
 				<File Id="483614494" Language="SFX">
 					<ShortName>PickUp.wav</ShortName>
-					<Path>SFX\PickUp_10C4C929.wem</Path>
+					<Path>SFX/PickUp_10C4C929.wem</Path>
 				</File>
 				<File Id="509468577" Language="SFX">
 					<ShortName>Spikes.wav</ShortName>
-					<Path>SFX\Spikes_10C4C929.wem</Path>
+					<Path>SFX/Spikes_10C4C929.wem</Path>
 				</File>
 				<File Id="533107509" Language="SFX">
 					<ShortName>PlayerHit1.wav</ShortName>
-					<Path>SFX\PlayerHit1_10C4C929.wem</Path>
+					<Path>SFX/PlayerHit1_10C4C929.wem</Path>
 				</File>
 				<File Id="542299782" Language="SFX">
 					<ShortName>Song.wav</ShortName>
-					<Path>SFX\Song_D79FB2B7.wem</Path>
+					<Path>SFX/Song_D79FB2B7.wem</Path>
 				</File>
 				<File Id="564118332" Language="SFX">
 					<ShortName>DoorOpen.wav</ShortName>
-					<Path>SFX\DoorOpen_10C4C929.wem</Path>
+					<Path>SFX/DoorOpen_10C4C929.wem</Path>
 				</File>
 				<File Id="620874057" Language="SFX">
 					<ShortName>Ambiance.wav</ShortName>
-					<Path>SFX\Ambiance_D79FB2B7.wem</Path>
+					<Path>SFX/Ambiance_D79FB2B7.wem</Path>
 				</File>
 				<File Id="637491785" Language="SFX">
 					<ShortName>PlayerJump1.wav</ShortName>
-					<Path>SFX\PlayerJump1_10C4C929.wem</Path>
+					<Path>SFX/PlayerJump1_10C4C929.wem</Path>
 				</File>
 				<File Id="676053806" Language="SFX">
 					<ShortName>Reverse.wav</ShortName>
-					<Path>SFX\Reverse_10C4C929.wem</Path>
+					<Path>SFX/Reverse_29058A2C.wem</Path>
+				</File>
+				<File Id="710817543" Language="SFX">
+					<ShortName>Step_1_Single.wav</ShortName>
+					<Path>SFX/Step_1_Single_10C4C929.wem</Path>
 				</File>
 				<File Id="787462108" Language="SFX">
 					<ShortName>PlayerHit5.wav</ShortName>
-					<Path>SFX\PlayerHit5_10C4C929.wem</Path>
+					<Path>SFX/PlayerHit5_10C4C929.wem</Path>
+				</File>
+				<File Id="810261986" Language="SFX">
+					<ShortName>Step_2_Single.wav</ShortName>
+					<Path>SFX/Step_2_Single_10C4C929.wem</Path>
 				</File>
 				<File Id="887893152" Language="SFX">
 					<ShortName>PlayerHit2.wav</ShortName>
-					<Path>SFX\PlayerHit2_10C4C929.wem</Path>
+					<Path>SFX/PlayerHit2_10C4C929.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

@@ -17,6 +17,7 @@
 						<ObjectRef Name="Reverse" ID="{515A3520-F067-45D6-8CBF-9AB9866DA00F}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ambiance" ID="{106D4081-55E2-4667-829F-899157D6E3F8}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlaySong" ID="{2B26C66C-37AE-46BD-ACB3-9F82277A1452}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayStep" ID="{756A199C-5033-4842-BDB4-339F72AF90CA}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayOrgan" ID="{710B7248-F0A4-4934-9EDF-2099DA4EACC0}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PickUp" ID="{BAF0451B-E9D3-4953-914C-E0AB0A8F24A0}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayPlayOrgan" ID="{2F711905-394F-4A8F-8C40-0B2D5003A33B}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
@@ -29,6 +30,7 @@
 						<ObjectRef Name="PlayReverse" ID="{D124CC84-A237-4D5B-BE63-72F34E6426AF}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayerJump" ID="{0EBCEF6E-4F27-4E12-A257-84C5BB4C3168}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="StopAmbiance" ID="{E226735B-7F03-4F83-8667-0632BB8AE0E3}" WorkUnitID="{A176FD1B-8BBE-4320-A842-EC1FA2FCC8FB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Step" ID="{0130A19C-44A0-4FF4-AAF9-3FD3AAE8D158}" WorkUnitID="{E6A3070C-40AE-4ECA-87A1-ACFB4F88DDFF}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
