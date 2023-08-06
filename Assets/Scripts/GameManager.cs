@@ -164,6 +164,13 @@ public class GameManager : MonoBehaviour
         CurrentPlayer.PlayOrgan(true);
         organPlaying = AudioManager.current.AK_PlayClipOnObjectWithEndEventCallback("PlayPlayOrgan", gameObject, AK_CallbackFunction);
         
+        //If this is still null then the audio didn't play so we should just go to the next level
+        if (organPlaying == null) 
+        {
+            CurrentPlayer.PlayOrgan(false);
+            Organ.current.SetPianoDoorOpen(true);
+            AudioManager.current.AK_PlayClipOnObject("PlayDoorOpen", Organ.current.gameObject);
+        }
 
         print("Level Complete!");
 

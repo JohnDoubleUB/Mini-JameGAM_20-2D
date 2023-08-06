@@ -23,8 +23,11 @@ public class AudioManager : MonoBehaviour
     {
         if (current != null) Debug.LogWarning("Oops! it looks like there might already be a " + GetType().Name + " in this scene!");
         current = this;
-
-        AkSoundEngine.StopAll();
+        try
+        {
+            AkSoundEngine.StopAll();
+        }
+        catch { }
     }
 
     private void Start()
@@ -37,104 +40,181 @@ public class AudioManager : MonoBehaviour
         gameHasFocus = focus; //This hopefully will stop all the sounds playing when someone tabs back into the game
     }
 
-    public void StopTrack(string eventName) 
+    public bool StopTrack(string eventName)
     {
-        if (activeTracks.TryGetValue(eventName, out uint value) == false) return;
-        AkSoundEngine.StopPlayingID(value, 300, AkCurveInterpolation.AkCurveInterpolation_Linear);
+        if (activeTracks.TryGetValue(eventName, out uint value) == false) return false;
+        try
+        {
+            AkSoundEngine.StopPlayingID(value, 300, AkCurveInterpolation.AkCurveInterpolation_Linear);
+        }
+        catch
+        {
+            return false;
+        }
+
 
         activeTracks.Remove(eventName);
+
+        return true;
     }
 
-    public void PlayTrack(string eventName) 
+    public bool PlayTrack(string eventName)
     {
-        if (activeTracks.ContainsKey(eventName)) return;
-        activeTracks.Add(eventName, AkSoundEngine.PostEvent(eventName, gameObject));
-    }
-
-    public void PlayTracks(IEnumerable<string> tracks)
-    {
-        if (IsEditorClone()) return;
-
-        AkSoundEngine.StopAll(gameObject);
-
-        if (tracks.Any())
+        if (activeTracks.ContainsKey(eventName)) return false;
+        try
         {
-            foreach (string track in tracks)
-            {
-                if (string.IsNullOrEmpty(track)) continue;
-
-                print("Playing " + track);
-                activeTracks.Add(track, AkSoundEngine.PostEvent(track, gameObject)); //Its better that this calls its own AKSoundEngine event rather than AK_PlayClipOnObject
-            }
+            activeTracks.Add(eventName, AkSoundEngine.PostEvent(eventName, gameObject));
         }
+        catch
+        {
+            return false;
+        }
+
+        return true;
     }
 
-    public uint AK_PlayClipOnObjectWithEndEventCallback(string eventName, GameObject in_gameObjectID, AkCallbackManager.EventCallback in_pfnCallback, bool onlyWhenGameFocus = true)
+    public bool PlayTracks(IEnumerable<string> tracks)
     {
-        if (IsEditorClone()) return new uint();
-        if (onlyWhenGameFocus && gameHasFocus == false) return new uint();
+        if (IsEditorClone()) return false;
 
-        return AkSoundEngine.PostEvent(eventName, in_gameObjectID, (uint)AkCallbackType.AK_EndOfEvent, in_pfnCallback, in_gameObjectID);
-    }
-
-
-    public void StopAll(GameObject gameObject = null)
-    {
-        if (IsEditorClone()) return;
-
-        if (gameObject != null)
+        try
         {
             AkSoundEngine.StopAll(gameObject);
         }
-        else
+        catch
         {
-            AkSoundEngine.StopAll();
+            return false;
         }
+
+        if (tracks.Any())
+        {
+            try
+            {
+                foreach (string track in tracks)
+                {
+                    if (string.IsNullOrEmpty(track)) continue;
+
+                    print("Playing " + track);
+                    activeTracks.Add(track, AkSoundEngine.PostEvent(track, gameObject)); //Its better that this calls its own AKSoundEngine event rather than AK_PlayClipOnObject
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
-    public uint AK_PlayEventAt(string eventName, Vector3 pos, bool onlyWhenGameFocus = true)
+    public uint? AK_PlayClipOnObjectWithEndEventCallback(string eventName, GameObject in_gameObjectID, AkCallbackManager.EventCallback in_pfnCallback, bool onlyWhenGameFocus = true)
     {
         if (IsEditorClone()) return new uint();
         if (onlyWhenGameFocus && gameHasFocus == false) return new uint();
+
+        try
+        {
+            uint id = AkSoundEngine.PostEvent(eventName, in_gameObjectID, (uint)AkCallbackType.AK_EndOfEvent, in_pfnCallback, in_gameObjectID);
+            return id;
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+
+    public bool StopAll(GameObject gameObject = null)
+    {
+        if (IsEditorClone()) return false;
+        try
+        {
+            if (gameObject != null)
+            {
+                AkSoundEngine.StopAll(gameObject);
+            }
+            else
+            {
+                AkSoundEngine.StopAll();
+            }
+        }
+        catch 
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    public uint? AK_PlayEventAt(string eventName, Vector3 pos, bool onlyWhenGameFocus = true)
+    {
+        if (IsEditorClone()) return null;
+        if (onlyWhenGameFocus && gameHasFocus == false) return null;
 
         GameObject tempGO = new GameObject($"TempAudio_{eventName}_"); // create the temp object
         tempGO.transform.position = pos; // set its position
-        uint eventID = AkSoundEngine.PostEvent(eventName, tempGO, (uint)AkCallbackType.AK_EndOfEvent, AK_CallbackFunction, tempGO);
-        tempGO.name += eventID;
-        return eventID;
-    }
 
-    //This will follow the object
-    public uint AK_PlayClipOnObject(string eventName, GameObject in_gameObjectID, bool onlyWhenGameFocus = true)
-    {
-        if (IsEditorClone()) return new uint();
-        if (onlyWhenGameFocus && gameHasFocus == false) return new uint();
-
-        return AkSoundEngine.PostEvent(eventName, in_gameObjectID);
-    }
-
-    public void AK_StopClipsById(IEnumerable<uint> ids)
-    {
-        if (IsEditorClone()) return;
-
-
-        foreach (uint id in ids)
+        try
         {
-            AkSoundEngine.StopPlayingID(id);
+            uint eventID = AkSoundEngine.PostEvent(eventName, tempGO, (uint)AkCallbackType.AK_EndOfEvent, AK_CallbackFunction, tempGO);
+            tempGO.name += eventID;
+            return eventID;
+        }
+        catch 
+        {
+            return null;
         }
     }
 
-    public void AK_StopClipById(uint id)
+    //This will follow the object
+    public uint? AK_PlayClipOnObject(string eventName, GameObject in_gameObjectID, bool onlyWhenGameFocus = true)
     {
-        if (IsEditorClone()) return;
+        if (IsEditorClone()) return null;
+        if (onlyWhenGameFocus && gameHasFocus == false) return null;
 
-        AkSoundEngine.StopPlayingID(id);
+        try
+        {
+            uint id = AkSoundEngine.PostEvent(eventName, in_gameObjectID);
+            return id;
+        }
+        catch 
+        {
+            return null;
+        }
     }
 
-    public void AK_PlayButtonClickSound()
+    public bool AK_StopClipsById(IEnumerable<uint> ids)
     {
-        //AK_PlayEventAt("Play_MenuClick", transform.position);
-        AK_PlayClipOnObject("Play_MenuClick", gameObject, false);
+        if (IsEditorClone()) return false;
+
+        try
+        {
+            foreach (uint id in ids)
+            {
+                AkSoundEngine.StopPlayingID(id);
+            }
+
+            return true;
+        }
+        catch 
+        {
+            return false;
+        }
+    }
+
+    public bool AK_StopClipById(uint id)
+    {
+        if (IsEditorClone()) return false;
+
+        try
+        {
+            AkSoundEngine.StopPlayingID(id);
+        } catch 
+        {
+            return false;
+        }
+
+        return true;
     }
 
 
@@ -151,34 +231,14 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void SetMasterVolume(float value)
-    {
-        if (IsEditorClone()) return;
-        masterVolume = value;
-        AkSoundEngine.SetRTPCValue("MasterVolume", masterVolume);
-    }
-
-    public void SetMusicVolume(float value)
-    {
-        if (IsEditorClone()) return;
-        musicVolume = value;
-        AkSoundEngine.SetRTPCValue("MusicVolume", musicVolume);
-    }
-
-    public void SetSFXVolume(float value)
-    {
-        if (IsEditorClone()) return;
-        sfxVolume = value;
-        AkSoundEngine.SetRTPCValue("SFXVolume", sfxVolume);
-    }
-
-
-
     private void OnDestroy()
     {
         if (IsEditorClone()) return;
-
-        AkSoundEngine.StopAll();
+        try
+        {
+            AkSoundEngine.StopAll();
+        }
+        catch { }
     }
 
     //This is pretty much just to make sure that in editor clones we don't use any wwise calls at all

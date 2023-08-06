@@ -44,7 +44,6 @@ public class Spider : PlatformerAI
                 Vector2 direction = targetPosition - currentPosition;
 
                 direction.Normalize();
-                print(direction);
                 Move(direction * 30 * Time.deltaTime);
 
             }
