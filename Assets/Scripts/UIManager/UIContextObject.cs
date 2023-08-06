@@ -53,12 +53,12 @@ namespace UIManagerLibrary.Scripts
             if (!display && currentTransparency != 0f)
             {
 
-                currentTransparency = Mathf.Max(currentTransparency - (Time.deltaTime * FadeSpeed), 0f);
+                currentTransparency = Mathf.Max(currentTransparency - (Time.unscaledDeltaTime * FadeSpeed), 0f);
                 transparencyHasChanged = true;
             }
             else if (display && currentTransparency != 1f)
             {
-                currentTransparency = Mathf.Min(currentTransparency + (Time.deltaTime * FadeSpeed), 1f);
+                currentTransparency = Mathf.Min(currentTransparency + (Time.unscaledDeltaTime * FadeSpeed), 1f);
                 transparencyHasChanged = true;
             }
 

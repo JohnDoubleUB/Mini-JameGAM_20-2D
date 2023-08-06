@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UIManagerLibrary.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -44,6 +45,8 @@ public class GameManager : MonoBehaviour
     private float currentGameTimer = 0f;
 
     public float CurrentGameTimer => currentGameTimer;
+
+    public bool IsPaused;
 
     private uint? organPlaying;
 
@@ -92,6 +95,7 @@ public class GameManager : MonoBehaviour
             {
                 AudioManager.current.StopTrack("PlaySong");
                 AudioManager.current.AK_PlayClipOnObject("PlayReverse", gameObject);
+                UIManager.current.SetActiveContexts(true, "Fade");
                 currentResetTimer = ResetTimer;
                 resetInitiated = true;
                 TimeScaleManager.current.TransitionToTimeScale(0.7f);
@@ -113,6 +117,7 @@ public class GameManager : MonoBehaviour
                     KeyEntities.ResetKeysExcludingIds(PlacedKeyIds);
                     PickedUpKeyIds.Clear();
                     if(!LevelCompleted) AudioManager.current.PlayTrack("PlaySong");
+                    UIManager.current.SetActiveContexts(false, "Fade");
                 }
 
             }

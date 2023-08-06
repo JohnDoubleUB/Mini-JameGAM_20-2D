@@ -35,6 +35,7 @@ namespace UIManagerLibrary.Scripts
 
         private void Start()
         {
+            Cursor.visible = false;
             _InitializeContexts();
         }
 

@@ -16,9 +16,9 @@ public class UIClock : MonoBehaviour
 
     int currentTime = 0;
 
-    public void SetTime(int time) 
+    public void SetTime(int time)
     {
-        int validTime = Mathf.Min(time - 1, sprites.Length - 1);
+        int validTime = Mathf.Clamp(time - 1, 0, sprites.Length - 1);
         if (validTime == currentTime) return;
 
         currentTime = validTime;

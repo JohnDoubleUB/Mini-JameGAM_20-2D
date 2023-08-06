@@ -31,7 +31,7 @@ public abstract class Player : MonoBehaviour
     protected void Update()
     {
 
-        if (CanControl == false || IsAlive == false)
+        if (CanControl == false || IsAlive == false || GameManager.current.IsPaused)
         {
             JumpHold = false;
             return;
@@ -52,7 +52,7 @@ public abstract class Player : MonoBehaviour
 
     protected void FixedUpdate()
     {
-        if (CanControl == false || IsAlive == false) 
+        if (CanControl == false || IsAlive == false || GameManager.current.IsPaused) 
         {
             Move(Vector2.zero);
             return; 

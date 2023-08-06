@@ -22605,6 +22605,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 234523472}
     - target: {fileID: 1264731655310353928, guid: eebaf56e96b3b104a95b7b2250a4949b, type: 3}
+      propertyPath: NextSceneName
+      value: ThanksForPlaying
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264731655310353928, guid: eebaf56e96b3b104a95b7b2250a4949b, type: 3}
       propertyPath: CameraFollower
       value: 
       objectReference: {fileID: 519420035}
