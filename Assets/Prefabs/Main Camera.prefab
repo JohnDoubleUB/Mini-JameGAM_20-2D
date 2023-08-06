@@ -807,7 +807,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   FollowEnabled: 1
   smoothSpeed: 3
-  offset: {x: 0, y: 3, z: 0}
+  offset: {x: 0, y: 1, z: 0}
 --- !u!114 &3017749445679578277
 MonoBehaviour:
   m_ObjectHideFlags: 0
