@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MyloScene3.unity
     guid: ecab37ba1361d4e1d9246790b3c59ecd
   - enabled: 1
+    path: Assets/Scenes/JohnScene2.unity
+    guid: 028d12a9461e10a47969ca7dea891318
+  - enabled: 1
     path: Assets/Scenes/ThanksForPlaying.unity
     guid: 6468b7e3572736847b1e482d1b0d51bb
   m_configObjects: {}

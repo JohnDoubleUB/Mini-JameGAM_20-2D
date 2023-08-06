@@ -15,6 +15,8 @@ public class Spider : PlatformerAI
     {
         base.FixedUpdate();
 
+        if (patrolPoints.Length < 1) return;
+
         if (IsAlive == false || EntityActive == false || (stopAfterLastPatrolPoint && patrolIndex == patrolPoints.Length)) 
         {
             Move(Vector2.zero);

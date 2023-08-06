@@ -8,6 +8,9 @@ public abstract class Player : MonoBehaviour
 {
     private Vector3 initialPosition;
 
+    [SerializeField]
+    private ParticleSystem bloodParticleSystem;
+
     [HideInInspector]
     public bool Crouch;
     [HideInInspector]
@@ -73,7 +76,11 @@ public abstract class Player : MonoBehaviour
 
     public virtual void Kill() 
     {
-        if(isAlive) AudioManager.current.AK_PlayClipOnObject("PlayPlayerHit", gameObject);
+        if (isAlive) 
+        {
+            AudioManager.current.AK_PlayClipOnObject("PlayPlayerHit", gameObject);
+            bloodParticleSystem.Play();
+        }
         isAlive = false;
         
     }
@@ -87,5 +94,6 @@ public abstract class Player : MonoBehaviour
     {
         isAlive = true;
         transform.position = initialPosition;
+        bloodParticleSystem.Stop();
     }
 }
