@@ -37,10 +37,15 @@ public abstract class Player : MonoBehaviour
             return;
         }
 
+        if(Input.GetButtonDown("Jump"))
+        {
+            Jump();
+        }
+
         if (Input.GetButton("Jump"))
         {
             JumpHold = true;
-            Jump();
+            //Jump();
 
         }
         else

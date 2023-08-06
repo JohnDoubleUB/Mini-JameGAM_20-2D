@@ -107,7 +107,7 @@ public class PlatformerAI : ResetableEntity
         if (collision.WasWithPlayer()) 
         {
             SetKilled(true);
-            GameManager.current.CurrentPlayer.Jump(false);
+            GameManager.current.CurrentPlayer.Launch();
         }
     }
 

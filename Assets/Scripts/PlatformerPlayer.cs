@@ -121,7 +121,7 @@ public class PlatformerPlayer : Player
         isJumping = false;
         isFalling = false;
 
-        if (isAlive == false) 
+        if (isAlive == false)
         {
             rb.velocity = Vector2.zero;
         }
@@ -131,6 +131,7 @@ public class PlatformerPlayer : Player
             print("Ground enter");
             parentedPlatform = collision.transform;
             transform.SetParent(parentedPlatform);
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
 
@@ -193,7 +194,21 @@ public class PlatformerPlayer : Player
                 currentJumpCount++;
                 isJumping = true;
             }
+            else
+            {
+                currentJumpCount = 0;
+            }
         }
+    }
+
+    public void Launch()
+    {
+        Vector2 DirectionOfMovement = new Vector2(rb.velocity.x, Mathf.Max(0, rb.velocity.y));
+
+        DirectionOfMovement.Normalize();
+        //trigger jumping but only when the player can jump I.e. has not reached the max jumps
+        rb.velocity = new Vector2(0, jumpVelocity * jumpVelocityMultiplier) + (DirectionOfMovement * 0.5f);
+        currentJumpCount = 0;
     }
 
     public override void Interact()

@@ -60,6 +60,8 @@ public class Organ : ResetableEntity
     {
         if (pianoOpen)
         {
+            PlayerInRange = true;
+            interactionText.enabled = true;
             if (Input.GetButtonDown("Interact"))
             {
                 GameManager.current.ContinueToNextLevel();

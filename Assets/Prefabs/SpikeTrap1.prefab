@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1f54e758d400d40bef09ec74a035e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AlwaysKillPlayer: 0
+  AlwaysKillPlayer: 1
   SoundToPlay: PlaySpikes
 --- !u!61 &5511623058002041154
 BoxCollider2D:

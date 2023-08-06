@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Spider : PlatformerAI
 {
+    public bool stopAfterLastPatrolPoint;
+    [SerializeField]
     private int patrolIndex;
     public Transform[] patrolPoints;
     public float timerBetweenPoints = 1.5f;
@@ -13,7 +15,7 @@ public class Spider : PlatformerAI
     {
         base.FixedUpdate();
 
-        if (IsAlive == false || EntityActive == false) 
+        if (IsAlive == false || EntityActive == false || (stopAfterLastPatrolPoint && patrolIndex == patrolPoints.Length)) 
         {
             Move(Vector2.zero);
             return; 
@@ -29,7 +31,7 @@ public class Spider : PlatformerAI
             else 
             {
                 patrolWaitInitiated = false;
-                patrolIndex = (patrolIndex + 1) % patrolPoints.Length;
+                patrolIndex = stopAfterLastPatrolPoint ? patrolIndex + 1 : (patrolIndex + 1) % patrolPoints.Length;
             }
         }
         else 
