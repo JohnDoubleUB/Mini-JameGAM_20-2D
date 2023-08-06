@@ -82,7 +82,6 @@ public abstract class Player : MonoBehaviour
             bloodParticleSystem.Play();
         }
         isAlive = false;
-        
     }
 
     public void MakeAlive() 
